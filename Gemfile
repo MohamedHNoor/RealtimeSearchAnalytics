@@ -63,3 +63,5 @@ group :development do
   # gem "spring"
 end
 
+
+gem "faker", "~> 3.2"
