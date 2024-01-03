@@ -1,24 +1,76 @@
-# README
+# RealtimeSearchAnalytics
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+>  Real-time search engine that would store analytics from what users searched for.
 
-Things you may want to cover:
+# Key Features
 
-* Ruby version
+- 
 
-* System dependencies
+## Built With
 
-* Configuration
+- Ruby 3.2.2
+- Ruby on Rails 7.1.2
+- hotwire,
+- tailwind CSS
+- postgresql
 
-* Database creation
+## Live Demo
 
-* Database initialization
+[Live Demo Link]()
 
-* How to run the test suite
+## Getting Started
 
-* Services (job queues, cache servers, search engines, etc.)
+To get a local copy up and running follow these simple example steps.
 
-* Deployment instructions
+### Prerequisites
 
-* ...
+> Ruby version 3.2.2
+> Rails version 7.1.2
+> Postgresql
+
+### Setup
+
+```sh
+  cd your_desired_folder
+  git clone https://github.com/MohamedHNoor/RealtimeSearchAnalytics.git
+```
+
+### Install
+
+- After cloning type `cd RealtimeSearchAnalytics`.
+- Run `bundle install` to install all gems.
+
+### Usage
+
+- Run `rails db:create` to create a new database
+- Run `rails db:migrate` to migrate the db and build the schema
+- Run `bin/dev` to start the server
+
+## Authors
+
+👤 **Mohamed Hassan Noor**
+
+- GitHub: [@MohamedHNoor](https://github.com/MohamedHNoor)
+- Twitter: [@MohamedHNoor](https://twitter.com/MohamedHNoor)
+- LinkedIn: [@MohamedHNoor](https://www.linkedin.com/in/mohamedhnoor/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/MohamedHNoor/RealtimeSearchAnalytics/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
+
