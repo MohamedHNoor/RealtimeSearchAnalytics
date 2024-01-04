@@ -6,6 +6,23 @@ class ArticlesController < ApplicationController
     @articles = Article.all
   end
 
+  def search
+    if params.dig(:title_search).present?
+      @articles = Article.filter_by_name(params[:title_search]).order(created_at: :desc)
+    else
+      @articles = []
+    end
+    respond_to do |format|
+      format.turbo_stream do
+          render turbo_stream: [
+            turbo_stream.update("search_results",
+            partial: "articles/search_results",
+            locals: { articles: @articles })
+          ]
+      end
+    end
+  end
+
   # GET /articles/1 or /articles/1.json
   def show
   end

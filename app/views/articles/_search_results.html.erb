@@ -1,0 +1,18 @@
+<table class="w-1/2 mx-auto bg-white border border-gray-300">
+  <thead>
+    <tr>
+      <th class="border-b border-gray-300 py-2">Article Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% articles.each do |article| %>
+      <tr class="border-b border-gray-300">
+        <td class="py-2 px-4">
+          <%= link_to article do %>
+            <%= highlight(article.name, params.dig(:title_search) )%>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

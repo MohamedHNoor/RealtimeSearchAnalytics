@@ -8,10 +8,13 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+# Remove existing articles
+Article.destroy_all
+
 # Generate 10 articles
-10.times do
+20.times do
   Article.create(
-    name: Faker::Book.title,
+    name: Faker::Movie.unique.title,
     description: Faker::Lorem.paragraph,
   )
 end

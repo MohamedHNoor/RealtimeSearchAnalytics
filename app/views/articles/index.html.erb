@@ -2,13 +2,43 @@
   <% if notice.present? %>
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
-
-  <div class="flex justify-between items-center">
+  <div class="flex flex-col sm:flex-row justify-between items-center gap-5">
     <h1 class="font-bold text-4xl">Articles</h1>
-    <%= link_to "New article", new_article_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+    <%= form_with url: search_articles_path, method: :post, data: { controller: 'search-form', search_form_target: 'form' } do |form| %>
+      <%= form.search_field :title_search, value: params[:title_search], data: { action: "input->search-form#search" }, placeholder: "Search article", class: "rounded-lg py-3 px-5 block font-medium w-96" %>
+    <% end %>
   </div>
-
-  <div id="articles" class="min-w-full">
-    <%= render @articles %>
+  <div id="search_results" class="mt-5 mb-5 min-w-full"></div>
+  <div class="flex flex-col w-full">
+    <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
+      <div class="py-2 inline-block min-w-full">
+        <div class="overflow-x-auto">
+          <table class="min-w-full overflow-x-scroll">
+            <thead class="bg-white border-b">
+              <tr>
+                <th class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                  Name
+                </th>
+                <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
+                  Description
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @articles.each do |article|%>
+                <tr class="bg-gray-50 border-b">
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                    <%= link_to article.name, article, class: "hover:underline duration-300" %>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                    <%= article.description %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
