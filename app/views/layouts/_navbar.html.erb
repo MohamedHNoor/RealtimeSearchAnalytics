@@ -1,0 +1,22 @@
+<nav class="container mx-auto">
+  <div>
+    <div class="relative flex h-16 items-center justify-between">
+      <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+        <div class="hidden sm:ml-6 sm:block">
+          <div class="flex space-x-4">
+          </div>
+        </div>
+      </div>
+      <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+        <% if current_user %>
+          <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+        <% else %>
+          <div class="flex justify-between items-center gap-10">
+            <%= link_to "Login", user_session_path %>
+            <%= link_to "Sign up",  new_user_session_path %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</nav>

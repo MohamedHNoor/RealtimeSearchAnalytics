@@ -42,3 +42,24 @@
     </div>
   </div>
 </div>
+<%# analytics %>
+<div class="flex justify-between items-center space-x-8 p-8 mt-8 mb-8 bg-gray-100 rounded-lg">
+  <!-- Most Searched Card -->
+  <div class="w-1/2">
+    <h1 class="text-lg font-bold mb-4">Most Searched Queries</h1>
+    <ul>
+      <% @most_searched.each do |query, count| %>
+        <li class="mb-2"><%= "#{query}: #{count} searches" %></li>
+      <% end %>
+    </ul>
+  </div>
+  <!-- Trending Queries Card -->
+  <div class="w-1/2">
+    <h1 class="text-lg font-bold mb-4">Trending Queries</h1>
+    <ul>
+      <% @trending.each do |query, count| %>
+        <li class="mb-2"><%= "#{query}: #{count} searches" %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

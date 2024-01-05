@@ -1,14 +1,18 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_article, only: %i[ show edit update destroy ]
 
   # GET /articles or /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.take(5)
+    @most_searched = fetch_most_searched_queries
+    @trending = fetch_trending_queries
   end
 
   def search
     if params.dig(:title_search).present?
       @articles = Article.filter_by_name(params[:title_search]).order(created_at: :desc)
+      current_user.search_logs.create(query: params[:title_search])
     else
       @articles = []
     end
@@ -84,4 +88,16 @@ class ArticlesController < ApplicationController
     def article_params
       params.require(:article).permit(:name, :description)
     end
+
+    def fetch_most_searched_queries
+      user = User.find_by(params[:id])
+      queries_and_counts = SearchLog.where(user: user).group(:query).order('count_query desc').limit(5).count('query')
+      queries_and_counts.sort_by { |_, count| -count }.to_h
+    end
+
+    def fetch_trending_queries
+      user = User.find_by(params[:id])
+      queries_and_counts = SearchLog.where(user: user).group(:query).order('max(created_at) desc').limit(5).count('query')
+      queries_and_counts.sort_by { |_, count| -count }.to_h
+  end
 end
