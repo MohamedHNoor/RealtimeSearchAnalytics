@@ -2,9 +2,20 @@
 
 > Real-time search engine that would store analytics from what users searched for.
 
+## Login preview
+<img width="1440" alt="Screenshot 2024-01-05 at 17 24 11" src="https://github.com/MohamedHNoor/RealtimeSearchAnalytics/assets/97671133/dfbbf477-8c7b-4591-81ea-1dbec952d385">
+
+## Dashboard Preview
+<img width="1430" alt="Screenshot 2024-01-05 at 17 19 52" src="https://github.com/MohamedHNoor/RealtimeSearchAnalytics/assets/97671133/5b66661d-9d0d-46ef-af44-f69d865964b2">
+
+## Real-Time Search
+<img width="1440" alt="Screenshot 2024-01-05 at 17 23 45" src="https://github.com/MohamedHNoor/RealtimeSearchAnalytics/assets/97671133/9d8f0f96-4088-4370-a7db-78a3ae60a927">
+
+
+
 # Key Features
 
-- real time search box
+- real-time search box
 - analytics that display what user were searching for
 
 ## Built With
