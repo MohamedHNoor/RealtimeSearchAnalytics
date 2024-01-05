@@ -1,10 +1,11 @@
 # RealtimeSearchAnalytics
 
->  Real-time search engine that would store analytics from what users searched for.
+> Real-time search engine that would store analytics from what users searched for.
 
 # Key Features
 
-- 
+- real time search box
+- analytics that display what user were searching for
 
 ## Built With
 
@@ -16,7 +17,7 @@
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://realtimesearchanalytics.onrender.com/)
 
 ## Getting Started
 
@@ -46,6 +47,10 @@ To get a local copy up and running follow these simple example steps.
 - Run `rails db:migrate` to migrate the db and build the schema
 - Run `bin/dev` to start the server
 
+### Test
+
+- Run `rspec` for testing
+
 ## Authors
 
 👤 **Mohamed Hassan Noor**
@@ -64,13 +69,6 @@ Feel free to check the [issues page](https://github.com/MohamedHNoor/RealtimeSea
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
-
 ## 📝 License
 
 This project is [MIT](./LICENSE) licensed.
-
