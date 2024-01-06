@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_article, only: %i[ show edit update destroy ]
 
-  # GET /articles or /articles.json
+  # GET /articles or /articles.json 
   def index
     @articles = Article.take(5)
     @most_searched = fetch_most_searched_queries
